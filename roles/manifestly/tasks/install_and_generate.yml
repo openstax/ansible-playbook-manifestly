@@ -1,0 +1,11 @@
+---
+- name: install or update gem
+  shell: "{{ manifestly_rbenv_init }} && gem install -N manifestly"
+
+- name: generate manifest file
+  shell: >-
+    {{ manifestly_rbenv_init }} && manifestly create
+    --add {{ manifestly_dirs }}
+    --save_as {{ manifestly_src_filepath }}
+  args:
+    chdir: "{{ manifestly_src_root }}"

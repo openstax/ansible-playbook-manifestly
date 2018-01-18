@@ -1,0 +1,21 @@
+---
+- import_tasks: install_and_generate.yml
+  tags:
+    - manifestly
+
+- import_tasks: upload_to_github.yml
+  ignore_errors: True
+  tags:
+    - manifestly
+    - upload
+    - github
+
+- name: include tasks to upload manifest to hosts
+  include_tasks: upload_to_hosts.yml
+  become: True
+  delegate_to: "{{ item }}"
+  with_items: "{{ manifestly_hosts }}"
+  tags:
+    - manifestly
+    - upload
+    - hosts

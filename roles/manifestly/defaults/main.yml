@@ -1,0 +1,16 @@
+---
+manifestly_repo: openstax/deploy-manifests
+manifestly_src_root: "{{ playbook_dir }}/.."
+manifestly_src_filename: >-
+  {{ manifestly_repo_filename }}-{{ manifestly_environment_name }}-manifest.txt
+manifestly_src_filepath: "{{ manifestly_src_root }}/{{ manifestly_src_filename }}"
+
+manifestly_commit_message: "deployed to {{ manifestly_environment_name }}"
+manifestly_tag: "deployed_to_{{ manifestly_environment_name }}"
+manifestly_deployed_sha: "{{ manifestly_upload.stdout }}"
+
+manifestly_host_filename: rev.txt
+manifestly_host_filepath: "{{ manifestly_host_public_dir }}/{{ manifestly_host_filename }}"
+manifestly_hosts: []
+manifestly_owner: www-data
+manifestly_group: www-data

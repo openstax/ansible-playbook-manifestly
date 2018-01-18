@@ -1,0 +1,15 @@
+.manifestly
+*.pyc
+.DS_Store
+__py_cache__
+secrets
+.vagrant
+*.manifest
+dist
+build
+ansible_test*
+ssh.config
+environments/exampleso
+environments/examplesi
+.idea
+*.retry

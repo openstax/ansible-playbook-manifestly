@@ -1,0 +1,14 @@
+---
+- name: check and register if host public dir exists
+  stat:
+    path: "{{ manifestly_host_public_dir }}"
+  register: manifestly_stat_host_dir
+
+- name: "upload manifest file to hosts as {{ manifestly_host_filename }}"
+  copy:
+    src: "{{ manifestly_src_filepath }}"
+    dest: "{{ manifestly_host_filepath }}"
+    owner: "{{ manifestly_owner }}"
+    group: "{{ manifestly_group }}"
+    mode: 0644
+  when: manifestly_stat_host_dir.stat.exists

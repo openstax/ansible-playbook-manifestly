@@ -1,0 +1,16 @@
+---
+- name: upload manifest file to repo and register output
+  shell: >-
+    {{ manifestly_rbenv_init }} && manifestly upload
+    --file "{{ manifestly_src_filepath }}"
+    --repo "{{ manifestly_repo }}"
+    --repo-file "{{ manifestly_repo_filename }}"
+    --message "{{ manifestly_commit_message }}"
+  register: manifestly_upload
+
+- name: tag git commit, push tags to repo and register output
+  shell: >-
+    {{ manifestly_rbenv_init }} && manifestly tag
+    --repo "{{ manifestly_repo }}"
+    --sha "{{ manifestly_deployed_sha }}"
+    --tag "{{ manifestly_tag }}"
