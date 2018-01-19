@@ -1,7 +1,7 @@
 # ansible-role-manifestly
 An Ansible role to generate a deployment manifest file and upload it to Github and the server itself
 
-Requirements:
+Requirements (on localhost or deployment server):
   - rbenv
   - ruby
 
