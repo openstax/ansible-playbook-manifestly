@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/openstax/ansible-role-manifestly.png?branch=master)](https://travis-ci.org/openstax/ansible-role-manifestly)
+
 # ansible-role-manifestly
 An Ansible role to generate a deployment manifest file and upload it to Github and the server itself
 
