@@ -13,7 +13,7 @@ addons:
 install: pip install ansible
 
 # Basic role syntax check
-script: cd tests && ansible-playbook test.yml --syntax-check
+script: cd tests && ansible-playbook -i inventory test.yml --syntax-check
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
