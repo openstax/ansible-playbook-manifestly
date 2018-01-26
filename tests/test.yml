@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  connection: local
+  roles:
+    - role: ansible-role-manifestly
+      manifestly_dirs: ..
+      manifestly_rbenv_init: ''
+      manifestly_repo_filename: test
+      manifestly_environment_name: test
+      manifestly_host_public_dir: /home/testuser/www/test/public
+      manifestly_hosts:
+        - example.com
+      manifestly_owner: testuser

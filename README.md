@@ -1,13 +1,13 @@
 # ansible-role-manifestly
 An Ansible role to generate a deployment manifest file and upload it to Github and the server itself
 
-Requirements (on localhost or deployment server):
+# Requirements (on localhost or deployment server):
 ```
   - rbenv
   - ruby
 ```
 
-Required variables:
+# Required Role Variables
 ```
   - manifestly_dirs
   - manifestly_rbenv_init
@@ -16,13 +16,13 @@ Required variables:
   - manifestly_host_public_dir
 ```
 
-Recommended variables (variable: default):
+# Recommended Role Variables (variable: default)
 ```
   - manifestly_hosts: []
   - manifestly_host_owner: www-data
 ```
 
-Optional variables (variable: default):
+# Optional Role Variables (variable: default)
 ```
   - manifestly_repo: openstax/deploy-manifests
   - manifestly_src_root: "{{ playbook_dir }}/.."
@@ -37,7 +37,7 @@ Optional variables (variable: default):
   - manifestly_host_group: www-data
 ```
 
-Example playbook:
+# Example Playbook
 ```
 ---
 - name: 'manifestly : generate and upload deployment manifest'
